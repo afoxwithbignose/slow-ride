@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>慢骑 · 专注海岸</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body data-page="focus">
+<div class="app">
+
+  <aside class="sidebar">
+    <a class="brand" href="focus.html" aria-label="慢骑首页">
+      <span class="brand-mark">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 27h24" stroke="#1E3B4A" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M12.6 9h6.8v14h-6.8z" fill="#FFF9EC" stroke="#1E3B4A" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M13 13h6M13 17.2h6" stroke="#F26B4E" stroke-width="2.8"/>
+          <path d="M12.6 9 16 4.6 19.4 9Z" fill="#F7C565" stroke="#1E3B4A" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M19.6 7.4 25 5.4M12.4 7.4 7 5.4" stroke="#F7C565" stroke-width="2" stroke-linecap="round"/>
+          <path d="M18 25.8h-4l-.9-2.8h5.8z" fill="#FFF9EC" stroke="#1E3B4A" stroke-width="1.8" stroke-linejoin="round"/>
+          <circle cx="16" cy="24.4" r="0.9" fill="#1E3B4A"/>
+        </svg>
+      </span>
+      <span class="brand-text"><b>慢骑</b><i>SLOW RIDE</i></span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      <a href="focus.html" data-nav="focus">
+        <svg class="icon" aria-hidden="true"><use href="#i-coast"></use></svg><span>专注海岸</span><span class="nav-k">01</span>
+      </a>
+      <a href="plan.html" data-nav="plan">
+        <svg class="icon" aria-hidden="true"><use href="#i-flag"></use></svg><span>我的规划</span><span class="nav-k">02</span>
+      </a>
+      <a href="schedule.html" data-nav="schedule">
+        <svg class="icon" aria-hidden="true"><use href="#i-cal"></use></svg><span>日程表</span><span class="nav-k">03</span>
+      </a>
+      <a href="character.html" data-nav="character">
+        <svg class="icon" aria-hidden="true"><use href="#i-shirt"></use></svg><span>角色衣柜</span><span class="nav-k">04</span>
+      </a>
+    </nav>
+
+    <div class="side-note">
+      <div class="micro">今日航程 · TODAY</div>
+      <div class="amount"><b data-today-min>50</b><span>分钟</span></div>
+      <div class="seg-bar mini" data-today-seg aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    </div>
+
+    <div class="side-foot">
+      <button class="sound-btn" type="button" data-sound aria-pressed="false">
+        <svg class="icon" aria-hidden="true"><use href="#i-sound"></use></svg>
+        <span>海岸环境声</span>
+        <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="state">开启</span>
+      </button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-title">
+        <span class="eyebrow">FOCUS COAST · <span data-today>11月19日 周四</span></span>
+        <h1>专注海岸</h1>
+      </div>
+      <div class="topbar-actions">
+        <a class="session-chip" id="sessionChip" href="focus.html" hidden><span class="pulse"></span><span data-session-time>25:00</span></a>
+        <span class="badge sun" data-streak>连续 7 天</span>
+        <button class="icon-btn" type="button" data-sound aria-pressed="false" aria-label="海岸环境声">
+          <svg class="icon" aria-hidden="true"><use href="#i-sound"></use></svg>
+        </button>
+        <a class="avatar" href="character.html" aria-label="阿满的角色衣柜">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" fill="#BFE6F6"></rect>
+            <circle cx="50" cy="13" r="6.5" fill="#F7C565"></circle>
+            <path d="M0 47c10-5 21-6 32-3s21 4 32 1v19H0z" fill="#8FD8CB"></path>
+            <path d="M0 54c9-3 19-3 32-1s23 2 32 0v11H0z" fill="#19A99A" opacity=".5"></path>
+            <g stroke="#1E3B4A" stroke-width="2.4" stroke-linejoin="round">
+              <rect x="25" y="29" width="16" height="26" rx="8" fill="#FFFDF6"></rect>
+              <circle cx="33" cy="26" r="12.5" fill="#FFFDF6"></circle>
+              <path d="M44 21.5h8.6a3.4 3.4 0 0 1 0 6.8H44z" fill="#F7A23B"></path>
+              <rect x="21" y="35" width="22" height="6.5" rx="3.2" fill="#F26B4E"></rect>
+            </g>
+            <circle cx="37.6" cy="23.4" r="2.1" fill="#1E3B4A"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="focus-grid">
+
+        <section class="scene-panel" aria-label="海边骑行 3D 场景">
+          <div class="scene-stage" id="focusScene"></div>
+          <div class="scene-overlay tl">
+            <span class="scene-pill" id="sceneStatus"><span class="dot"></span><span id="sceneStatusText">在岸边喝口茶</span></span>
+          </div>
+          <div class="scene-overlay tr">
+            <span class="scene-pill">
+              <svg class="icon" style="width:14px;height:14px" aria-hidden="true"><use href="#i-wind"></use></svg>晴 24° · 微风
+            </span>
+          </div>
+          <div class="scene-overlay bl">
+            <span class="scene-hint">拖动画面环顾 · 双击复位</span>
+          </div>
+          <div class="scene-overlay br">
+            <span class="scene-pill">
+              <svg class="icon" style="width:14px;height:14px" aria-hidden="true"><use href="#i-bike"></use></svg><span id="sceneRideTotal">今日 50 分钟</span>
+            </span>
+          </div>
+
+          <div class="fs-hud" id="fsHud" hidden>
+            <div class="fs-top">
+              <div class="fs-brand"><span class="fs-logo">慢骑</span><span>FOCUS RIDE · 专注海岸</span></div>
+              <button class="fs-icon" type="button" data-sound aria-pressed="false" aria-label="海岸环境声">
+                <svg class="icon" aria-hidden="true"><use href="#i-sound"></use></svg>
+              </button>
+            </div>
+            <div class="fs-bottom">
+              <div class="fs-panel">
+                <span class="fs-task" id="fsTask">自由骑行</span>
+                <div class="fs-timer" id="fsTimer" role="timer">25:00</div>
+                <div class="fs-meta">
+                  <span>本次 <b id="fsKm">0.0</b> km</span>
+                  <span>今日 <b id="fsDayKm">0.0</b> km</span>
+                  <span class="fs-mode" id="fsMode">待出发</span>
+                </div>
+              </div>
+              <div class="fs-actions">
+                <button class="btn primary" id="fsPlay" type="button">
+                  <svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>开始骑行
+                </button>
+                <button class="btn" id="fsExit" type="button">
+                  <svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg>退出全屏
+                </button>
+                <span class="fs-note">拖动环顾 · 双击复位 · Esc 退出</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="console" aria-label="专注控制台">
+          <div class="console-head">
+            <div>
+              <span class="micro">THIS RIDE</span>
+              <h2>本次航行</h2>
+            </div>
+            <span class="badge" id="consoleBadge">待出发</span>
+          </div>
+
+          <div class="timer-wrap">
+            <div class="timer" id="timer" role="timer">25:00</div>
+            <div class="timer-sub"><span>剩余</span><span aria-hidden="true">·</span><b id="taskEcho">自由骑行</b></div>
+            <div class="ride-km">
+              <svg class="icon" aria-hidden="true"><use href="#i-bike"></use></svg>
+              已骑 <b id="rideKm">0.0</b> km
+              <span aria-hidden="true">·</span>
+              今日 <b id="rideDayKm">0.0</b> km
+            </div>
+          </div>
+
+          <div class="seg-bar" id="sessionBar" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+
+          <div class="presets" role="group" aria-label="专注时长">
+            <button type="button" data-min="15">15 分</button>
+            <button type="button" data-min="25" aria-pressed="true">25 分</button>
+            <button type="button" data-min="45">45 分</button>
+            <button type="button" data-min="60">60 分</button>
+          </div>
+
+          <div>
+            <label class="field-label" for="taskInput">这一程做什么</label>
+            <div class="field-icon">
+              <svg class="icon" aria-hidden="true"><use href="#i-flag"></use></svg>
+              <input class="field" id="taskInput" type="text" maxlength="24" placeholder="例如：作品集首页 / 读两章书" autocomplete="off">
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn primary" id="startBtn" type="button">
+              <svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>开始骑行
+            </button>
+            <button class="btn icon" id="resetBtn" type="button" aria-label="重置计时" disabled>
+              <svg class="icon" aria-hidden="true"><use href="#i-reset"></use></svg>
+            </button>
+          </div>
+
+          <button class="btn full" id="fsBtn" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#i-expand"></use></svg>全屏骑行 · 只看海岸
+          </button>
+
+          <div class="console-note">
+            <svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg>
+            <span>骑行时播海岸声；暂停时阿满会停下来喝茶。</span>
+          </div>
+
+          <div class="sound-row">
+            <span class="chip sound-state" data-sound-switch aria-checked="true">
+              <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span data-sound-label>环境声就绪</span>
+            </span>
+            <input type="range" min="0" max="100" value="55" data-volume aria-label="环境声音量">
+          </div>
+        </section>
+      </div>
+
+      <div class="grid-3">
+        <section class="card">
+          <div class="card-head">
+            <div><span class="micro">TODAY</span><h2 class="h-section">今日航程</h2></div>
+            <span class="badge sea">4 段</span>
+          </div>
+          <div class="voyage-slots" id="voyageSlots"></div>
+          <div class="voyage-foot" id="voyageFoot"></div>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <div><span class="micro">THIS WEEK</span><h2 class="h-section">本周足迹</h2></div>
+            <span class="badge sun" data-streak>连续 7 天</span>
+          </div>
+          <div class="stat-big"><b id="weekTotal">175</b><span>分钟 · 已专注</span></div>
+          <div class="bars" id="weekBars" aria-hidden="true"></div>
+          <div class="voyage-foot" id="weekMeta">连续 7 天 · 本周共 7 段</div>
+        </section>
+
+        <section class="card partner">
+          <div class="card-head">
+            <div><span class="micro">RIDE BUDDY</span><h2 class="h-section">同行伙伴</h2></div>
+          </div>
+          <div class="partner-top">
+            <div class="partner-avatar">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect width="64" height="64" fill="#E4F4FB"></rect>
+                <circle cx="50" cy="13" r="6" fill="#F7C565"></circle>
+                <g stroke="#1E3B4A" stroke-width="2.4" stroke-linejoin="round">
+                  <rect x="25" y="29" width="16" height="26" rx="8" fill="#FFFDF6"></rect>
+                  <circle cx="33" cy="26" r="12.5" fill="#FFFDF6"></circle>
+                  <path d="M44 21.5h8.6a3.4 3.4 0 0 1 0 6.8H44z" fill="#F7A23B"></path>
+                  <rect x="21" y="35" width="22" height="6.5" rx="3.2" fill="#F26B4E"></rect>
+                </g>
+                <circle cx="37.6" cy="23.4" r="2.1" fill="#1E3B4A"></circle>
+              </svg>
+            </div>
+            <div>
+              <div class="partner-name">阿满</div>
+              <div class="partner-meta">白鹅骑手 · 草帽收藏家</div>
+            </div>
+          </div>
+          <p class="h-sub" data-today-text>今天已经骑了 50 分钟。</p>
+          <div class="chips">
+            <span class="chip"><i class="sw" style="background:#FFFFFF"></i>雪白羽</span>
+            <span class="chip">草帽</span>
+            <span class="chip">珊瑚领巾</span>
+          </div>
+          <a class="btn sm" href="character.html" style="margin-top:auto">
+            <svg class="icon" aria-hidden="true"><use href="#i-shirt"></use></svg>去换装
+          </a>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="modal" id="doneModal" hidden role="dialog" aria-modal="true" aria-labelledby="doneTitle">
+  <div class="modal-back" data-close></div>
+  <div class="modal-panel celebrate">
+    <button class="modal-close" type="button" data-close aria-label="关闭">
+      <svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg>
+    </button>
+    <div class="goose">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" fill="#E4F4FB" rx="16"></rect>
+        <circle cx="50" cy="14" r="7" fill="#F7C565"></circle>
+        <g stroke="#1E3B4A" stroke-width="2.4" stroke-linejoin="round">
+          <rect x="25" y="31" width="16" height="26" rx="8" fill="#FFFDF6"></rect>
+          <circle cx="33" cy="27" r="12.5" fill="#FFFDF6"></circle>
+          <path d="M44 22.5h8.6a3.4 3.4 0 0 1 0 6.8H44z" fill="#F7A23B"></path>
+          <rect x="21" y="37" width="22" height="6.5" rx="3.2" fill="#F26B4E"></rect>
+        </g>
+        <circle cx="37.6" cy="24.4" r="2.1" fill="#1E3B4A"></circle>
+      </svg>
+    </div>
+    <div class="micro" style="justify-content:center">DOCKED · 到岸</div>
+    <h2 id="doneTitle">到岸啦！</h2>
+    <p class="h-sub" id="doneTask">作品集首页</p>
+    <div class="big" id="doneMinutes">25 分钟</div>
+    <p class="h-sub">喝口茶，再决定下一段去哪儿。</p>
+    <div class="modal-actions">
+      <button class="btn primary" id="doneAgain" type="button">再来一段</button>
+      <button class="btn" id="doneClose" type="button">收工</button>
+    </div>
+  </div>
+</div>
+
+<script src="audio.js" defer></script>
+<script src="vendor/three.min.js" defer></script>
+<script src="scene.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>

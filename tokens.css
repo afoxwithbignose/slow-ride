@@ -1,0 +1,52 @@
+/* =========================================================================
+   慢骑 · 设计变量
+   卡通游戏风 / 海岸专注
+   ========================================================================= */
+:root {
+  /* 底色 */
+  --paper: #F7EFDF;
+  --paper-2: #EFE3CB;
+  --cream: #FFF9EC;
+  --white: #FFFDF6;
+
+  /* 墨色 */
+  --ink: #1E3B4A;
+  --ink-2: #3A5866;
+  --muted: #5E7682;
+
+  /* 主题色 */
+  --coral: #F26B4E;
+  --coral-d: #C4482F;
+  --sea: #19A99A;
+  --sea-d: #0C7A70;
+  --sky: #BFE6F6;
+  --sky-2: #E4F4FB;
+  --sun: #F7C565;
+  --sun-d: #DFA536;
+
+  /* 功能色（浅底，配墨色文字） */
+  --tint-focus: #CFEDE8;
+  --tint-class: #FFE5BD;
+  --tint-move: #FFDAD2;
+  --tint-rest: #E4EBF0;
+
+  /* 形状 */
+  --r-xs: 8px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 26px;
+  --line: 2px;
+  --shadow: 5px 5px 0 var(--ink);
+  --shadow-sm: 3px 3px 0 var(--ink);
+  --shadow-xs: 2px 2px 0 var(--ink);
+
+  /* 字体 */
+  --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  --mono: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* 布局 */
+  --side-w: 248px;
+  --top-h: 78px;
+  --page-max: 1280px;
+}
